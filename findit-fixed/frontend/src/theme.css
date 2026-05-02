@@ -1,0 +1,21 @@
+/* Light-theme override using CSS filter inversion. The dark theme is the
+   default (no class). When `light-theme` is added to <html>, we invert
+   colors globally then re-invert images / video / canvas / iframes so
+   they stay rendered correctly. */
+
+html.light-theme {
+  background: #ffffff;
+  filter: invert(1) hue-rotate(180deg);
+}
+
+html.light-theme img,
+html.light-theme video,
+html.light-theme canvas,
+html.light-theme iframe,
+html.light-theme svg image,
+html.light-theme [data-no-invert] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Smooth transition on toggle */
+html, body { transition: background-color 0.2s ease; }

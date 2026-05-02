@@ -1,0 +1,72 @@
+# ==============================================================
+# FindIt -- repo-wide gitignore
+# ==============================================================
+
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+.yarn/install-state.gz
+
+# Environment files (NEVER commit; .env.example IS tracked)
+.env
+.env.local
+.env.development
+.env.development.local
+.env.production
+.env.production.local
+.env.test
+.env.test.local
+
+# Build outputs
+build/
+dist/
+out/
+.next/
+.cache/
+
+# User-uploaded content (runtime only -- must not leak)
+findit-fixed/backend/uploads/items/*
+findit-fixed/backend/uploads/avatars/*
+findit-fixed/backend/uploads/chat/*
+findit-fixed/backend/uploads/chat-private/*
+# Keep the empty directory placeholders so the app boots
+!findit-fixed/backend/uploads/items/.gitkeep
+!findit-fixed/backend/uploads/avatars/.gitkeep
+!findit-fixed/backend/uploads/chat-private/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+
+# Coverage / test artifacts
+coverage/
+.nyc_output/
+*.lcov
+.jest-cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Local secrets / keys (defense in depth)
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+private/
